@@ -23,7 +23,6 @@ object ProjectCommon extends sbt.AutoPlugin { common =>
       "-Ywarn-value-discard",
       "-Xfuture"
     ),
-    libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.1.2",
     libraryDependencies += "com.lihaoyi" % "ammonite-repl" % "0.3.2" % "test" cross CrossVersion.full,
     initialCommands in (Test, console) := """ammonite.repl.Repl.run("")"""
 //    ,wartremoverErrors ++= Warts.unsafe
@@ -60,6 +59,8 @@ object ProjectCommon extends sbt.AutoPlugin { common =>
     val catsSnapshot = common.cats
     def cats(module: String, gitReference: String = "#master"): ProjectRef =
       ProjectRef(uri(s"git@github.com:non/cats.git$gitReference"), s"cats-$module")
+
+    def scalaz(module: String): ModuleID = "org.scalaz" %% s"scalaz-$module" % "7.1.2"
 
     val monocle = Seq(
       macroParadise,
