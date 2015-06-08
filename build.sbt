@@ -5,10 +5,18 @@ name := "project-common"
 
 addSbtPlugin("org.brianmckenna" % "sbt-wartremover" % "0.13")
 
+addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.4")
+
+enablePlugins(GitVersioning)
+
+enablePlugins(GitBranchPrompt)
+
+git.useGitDescribe := true
+
 resolvers += "bintray/non" at "http://dl.bintray.com/non/maven"
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.5.2")
 
-sonatypeProfileName := "arya"
+sonatypeProfileName := "net.arya"
 
 pomExtra := {
   <url>http://github.com/refried/project-common</url>
@@ -31,3 +39,4 @@ pomExtra := {
       </developer>
     </developers>
 }
+
