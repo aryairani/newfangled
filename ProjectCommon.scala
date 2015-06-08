@@ -49,6 +49,8 @@ object ProjectCommon extends sbt.AutoPlugin { common =>
   object autoImport {
     val macroParadise = addCompilerPlugin("org.scalamacros" %% "paradise" % "2.0.1" cross CrossVersion.full)
 
+    val scalaReflect = libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
+
     val noPredef = scalacOptions += "-Yno-predef"
     val noImports = scalacOptions in compile += "-Yno-imports" // will break REPL if not restricted to compile
 
