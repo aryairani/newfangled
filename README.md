@@ -126,4 +126,4 @@ object Test extends SafeApp {
 ```
 
 ## Special thanks
-Thanks to pfn and OlegYch__ in #sbt, tpolecat for the `scalacOptions`, and all the free library and plugin developers.
+Thanks to pfn and OlegYch__ in #sbt, tpolecat for the `scalacOptions`, and all the amazing library and plugin developers.
