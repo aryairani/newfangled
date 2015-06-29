@@ -38,7 +38,7 @@ scalacOptions ++= Seq(
 )
 ```
 
-## Auto-Imports
+## Available project settings
 The following settings are made available to your build definition (but not automatically enabled):
 ```scala
 
