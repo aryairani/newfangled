@@ -1,11 +1,8 @@
 sbtPlugin := true
 
 organization := "net.arya"
-name := "project-common"
 
-addSbtPlugin("org.brianmckenna" % "sbt-wartremover" % "0.13")
-
-addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.4")
+name := "newfangled"
 
 enablePlugins(GitVersioning)
 
@@ -13,13 +10,10 @@ enablePlugins(GitBranchPrompt)
 
 git.useGitDescribe := true
 
-resolvers += "bintray/non" at "http://dl.bintray.com/non/maven"
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.5.2")
-
 sonatypeProfileName := "net.arya"
 
 pomExtra := {
-  <url>http://github.com/refried/project-common</url>
+  <url>http://github.com/refried/newfangled</url>
     <licenses>
       <license>
         <name>MIT</name>
@@ -27,9 +21,9 @@ pomExtra := {
       </license>
     </licenses>
     <scm>
-      <connection>scm:git:github.com/refried/project-common</connection>
-      <developerConnection>scm:git:git@github.com:refried/project-common</developerConnection>
-      <url>github.com/refried/project-common</url>
+      <connection>scm:git:github.com/refried/newfangled</connection>
+      <developerConnection>scm:git:git@github.com:refried/newfangled</developerConnection>
+      <url>github.com/refried/newfangled</url>
     </scm>
     <developers>
       <developer>
