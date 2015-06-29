@@ -13,10 +13,10 @@ Any feedback is appreciated!
 * https://github.com/scalamacros/paradise 2.0.1 (used by simulacrum)
 
 ## Available libraries
-* scala-reflect (via `scalaReflect`)
-* scalaz 7.1.3 (via `libraryDependencies += scalaz("core")`, etc.)
+* https://github.com/scalaz/scalaz 7.1.3 (via `libraryDependencies += scalaz("core")`, etc.)
 * https://github.com/non/cats snapshot (via `catsSnapshot("core")`, etc.)
 * https://github.com/julien-truffaut/Monocle 1.1.1 (via `monocle`)
+* scala-reflect (via `scalaReflect`)
 
 ## Default project settings
 ```scala
