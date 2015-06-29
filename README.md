@@ -4,18 +4,25 @@ An sbt plugin enabling the latest/greatest scala plugins, libraries, and compile
 Any feedback is appreciated!
 
 ## Auto-enabled compiler plugins
-* https://github.com/non/kind-projector 0.6.0 Compiler plugin for making type lambdas (type projections) easier to write
-* https://github.com/mpilquist/local-implicits 0.3.0 Compiler plugin which provides syntax for working with locally declared implicit values
+* https://github.com/non/kind-projector 0.6.0 
+  * Compiler plugin for making type lambdas (type projections) easier to write
+* https://github.com/mpilquist/local-implicits 0.3.0 
+  * Compiler plugin which provides syntax for working with locally declared implicit values
 
 ## Auto-enabled libraries
-* https://github.com/typelevel/machinist 0.3.0 Spire's macros for zero-cost operator enrichment
-* https://github.com/mpilquist/simulacrum 0.3.0 First class syntax support for type classes in Scala
+* https://github.com/typelevel/machinist 0.3.0 
+  * Spire's macros for zero-cost operator enrichment
+* https://github.com/mpilquist/simulacrum 0.3.0 
+  * First class syntax support for type classes in Scala
 * https://github.com/scalamacros/paradise 2.0.1 (used by simulacrum)
 
 ## Available libraries
-* https://github.com/scalaz/scalaz 7.1.3 (via `libraryDependencies += scalaz("core")`, etc.) An extension to the core Scala library for functional programming
-* https://github.com/non/cats snapshot (via `catsSnapshot("core")`, etc.): Lightweight, modular, and extensible library for functional programming
-* https://github.com/julien-truffaut/Monocle 1.1.1 (via `monocle`) Optics library for Scala
+* https://github.com/scalaz/scalaz 7.1.3 (via `libraryDependencies += scalaz("core")`, etc.) 
+  * An extension to the core Scala library for functional programming
+* https://github.com/non/cats snapshot (via `catsSnapshot("core")`, etc.)
+  * Lightweight, modular, and extensible library for functional programming
+* https://github.com/julien-truffaut/Monocle 1.1.1 (via `monocle`)
+  * Optics library for Scala
 * scala-reflect (via `scalaReflect`)
 
 ## Default project settings
