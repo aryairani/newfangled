@@ -1,4 +1,4 @@
-# newfangled [![Join the chat at https://gitter.im/refried/newfangled](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/refried/newfangled?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# newfangled [![Join the chat at https://gitter.im/refried/newfangled](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/refried/newfangled?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)[![Build Status](https://travis-ci.org/refried/newfangled.svg?branch=master)](http://travis-ci.org/refried/newfangled)
 
 An sbt plugin enabling the latest/greatest scala plugins, libraries, and compiler options.
 
