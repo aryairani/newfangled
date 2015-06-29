@@ -75,7 +75,7 @@ addSbtPlugin("net.arya" % "newfangled" % "0.2.0")
 organization := "net.arya"
 name := "example"
 
-// project-common settings
+// newfangled helpers
 libraryDependencies += scalaz("effect")
 monocle
 ```
