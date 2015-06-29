@@ -1,1 +1,1 @@
-addSbtPlugin("net.arya" % "newfangled" % "0.1.0")
+addSbtPlugin("net.arya" % "newfangled" % "0.2.0")

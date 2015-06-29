@@ -5,7 +5,7 @@ import sbt._, sbt.Keys._
 object Newfangled extends sbt.AutoPlugin { self =>
   override def trigger = allRequirements
   override val projectSettings = Seq(
-    scalaVersion := "2.11.6",
+    scalaVersion := "2.11.7",
     scalacOptions ++= Seq(
       "-deprecation",
       "-encoding", "UTF-8",       // yes, this is 2 args
@@ -34,19 +34,19 @@ object Newfangled extends sbt.AutoPlugin { self =>
 
     // https://github.com/mpilquist/simulacrum
     libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.3.0",
-    macroParadise,
+    macroParadise
 
     // // https://github.com/HairyFotr/linter not experienced enough with this to enable by default
     // resolvers += "Linter Repository" at "https://hairyfotr.github.io/linteRepo/releases",
     // addCompilerPlugin("com.foursquare.lint" %% "linter" % "0.1-SNAPSHOT"),
 
-    libraryDependencies += "com.lihaoyi" % "ammonite-repl" % "0.3.2" % "test" cross CrossVersion.full,
-    initialCommands in (Test, console) := """ammonite.repl.Repl.run("")"""
+    // libraryDependencies += "com.lihaoyi" % "ammonite-repl" % "0.3.2" % "test" cross CrossVersion.full,
+    // initialCommands in (Test, console) := """ammonite.repl.Repl.run("")"""
   )
 
   // https://github.com/non/cats
-  lazy val cats = Seq(
-    libraryDependencies += "org.spire-math" %% "cats-state" % "0.1.0-SNAPSHOT",
+  def catsSnapshot(module: String) = Seq(
+    libraryDependencies += "org.spire-math" %% s"cats-$module" % "0.1.0-SNAPSHOT",
     resolvers += Resolver.sonatypeRepo("snapshots")
   )
 
@@ -65,7 +65,7 @@ object Newfangled extends sbt.AutoPlugin { self =>
     val fatalWarnings = scalacOptions in compile += "-Xfatal-warnings"
     val picky = Seq(warnUnusedImport, fatalWarnings)
 
-    val catsSnapshot = self.cats
+    def catsSnapshot(module: String) = self.catsSnapshot(module)
     def cats(module: String, gitReference: String = "#master"): ProjectRef =
       ProjectRef(uri(s"git@github.com:non/cats.git$gitReference"), s"cats-$module")
 

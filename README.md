@@ -1,18 +1,26 @@
 # newfangled
-An sbt plugin enabling the latest/greatest scala plugins and libraries.
+An sbt plugin enabling the latest/greatest scala plugins, libraries, and compiler options.
 
+Any feedback is appreciated!
 
-## Enabled compiler plugins
+## Auto-enabled compiler plugins
 * https://github.com/non/kind-projector 0.6.0
 * https://github.com/mpilquist/local-implicits 0.3.0
 
-## Enabled libraries
+## Auto-enabled libraries
 * https://github.com/typelevel/machinist 0.3.0
-* https://github.com/lihaoyi/Ammonite 0.3.2 (in Test)
+* https://github.com/mpilquist/simulacrum 0.3.0
+* https://github.com/scalamacros/paradise 2.0.1 (used by simulacrum)
+
+## Available libraries
+* scala-reflect (via `scalaReflect`)
+* scalaz 7.1.3 (via `libraryDependencies += scalaz("core")`, etc.)
+* https://github.com/non/cats snapshot (via `catsSnapshot("core")`, etc.)
+* https://github.com/julien-truffaut/Monocle 1.1.1 (via `monocle`)
 
 ## Default project settings
 ```scala
-scalaVersion := "2.11.6",
+scalaVersion := "2.11.7",
 scalacOptions ++= Seq(
   "-deprecation",
   "-encoding", "UTF-8",       // yes, this is 2 args
@@ -27,9 +35,7 @@ scalacOptions ++= Seq(
   "-Ywarn-numeric-widen",
   "-Ywarn-value-discard",
   "-Xfuture"
-),
-libraryDependencies += "com.lihaoyi" % "ammonite-repl" % "0.3.2" % "test" cross CrossVersion.full,
-initialCommands in (Test, console) := """ammonite.repl.Repl.run("")"""
+)
 ```
 
 ## Auto-Imports
@@ -37,14 +43,13 @@ The following settings are made available to your build definition (but not auto
 ```scala
 
 // enable reflection
-val macroParadise = addCompilerPlugin("org.scalamacros" %% "paradise" % "2.0.1" cross CrossVersion.full)
 val scalaReflect = libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
 // import scalaz
 def scalaz(module: String): ModuleID = "org.scalaz" %% s"scalaz-$module" % "7.1.3"
 
 // import cats
-val catsSnapshot = libraryDependencies += "org.spire-math" %% "cats-state" % "0.1.0-SNAPSHOT"
+def catsSnapshot(module: String) = "org.spire-math" %% s"cats-$module" % "0.1.0-SNAPSHOT"
 def cats(module: String, gitReference: String = "#master"): ProjectRef // depend on particular cats git ref
 
 // enable monocle
@@ -62,7 +67,7 @@ val picky = Seq(warnUnusedImport, fatalWarnings)
 ## Example Usage:
 `project/plugins.sbt`:
 ```scala
-addSbtPlugin("net.arya" % "newfangled" % "0.1.0")
+addSbtPlugin("net.arya" % "newfangled" % "0.2.0")
 ```
 
 `build.sbt`
