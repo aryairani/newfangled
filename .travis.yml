@@ -1,0 +1,13 @@
+language: scala
+sbt_args: -J-Dproject.version=travis-SNAPSHOT
+scala:
+  - 2.10.5
+jdk:
+  - oraclejdk7
+  - oraclejdk8
+  - openjdk7
+# sudo: false
+cache:
+  directories:
+    - $HOME/.ivy2
+    - $HOME/.sbt
