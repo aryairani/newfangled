@@ -132,6 +132,11 @@ object Test extends SafeApp {
     }
 }
 ```
+Output:
+```
+Foo(12,Hello)
+Foo(7,Hello!!!)
+```
 
 ## Special thanks
 Thanks to pfn and OlegYch__ in #sbt, tpolecat for the `scalacOptions`, and all the amazing library and plugin developers.
